@@ -47,7 +47,7 @@
       domain: 'hiramgm.auth0.com',
       responseType: 'token id_token',
       audience: 'https://hiramgm.auth0.com/userinfo',
-      redirectUri: 'https://dachb.herokuapp.com:5000/callback',
+      redirectUri: 'https://dachb.herokuapp.com/callback',
       scope: 'openid'
     });
 
