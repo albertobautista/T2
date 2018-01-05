@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">Quesnay</a>
+      <div style="position: absolute; right: 20px; height: 120px; margin-top:10px;">
+        <button class="btn btn-secondary " ng-if="vm.auth.isAuthenticated()" ui-sref="home">
+          Inicio
+        </button>
+
+        <!-- <button class="btn btn-primary btn-margin" ng-if="!vm.auth.isAuthenticated()" ng-click="vm.auth.login()">
+          Iniciar Sesión
+        </button> -->
+        <button class="btn btn-secondary btn-margin" ng-if="vm.auth.isAuthenticated()" ui-sref="worklogs">
+          Registros
+        </button>
+        <button class="btn btn-secondary btn-margin" ng-if="vm.auth.isAuthenticated()" ng-click="vm.auth.logout()">
+          Salir
+        </button>
+
+      </div>
+    </div>
+  </div>
+</nav>

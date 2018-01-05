@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+  <title>Quesnay</title>
+  <link rel="icon" href="assets/logo.png">
+  <base href="/">
+
+  <!-- Viewport settings-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Basic style -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./node_modules/angular-material/angular-material.css">
+  <link rel="stylesheet" href="./node_modules/angular-datepicker/dist/index.css">
+  <link rel="stylesheet" href="..\app\styles\main.css">
+  <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <link rel="stylesheet"  href="//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css"  type="text/css"
+    media="all"/>
+  <link rel="stylesheet" href=".\node_modules\datatables\media\css\jquery.dataTables.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.0/css/responsive.bootstrap.min.css">
+
+</head>
+
+<body>
+  <div ng-app="app">
+    <navbar></navbar>
+
+    <div class="container">
+      <ui-view></ui-view>
+    </div>
+  </div>
+
+  <!-- Libraries -->
+  <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="auth0-variables.js"></script>
+  <script src="./node_modules/moment/moment.js"></script>
+  <script src="./node_modules/moment-timezone/moment-timezone.js"></script>
+  <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+  <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="node_modules/ngstorage/ngstorage.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-aria/angular-aria.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-messages/angular-messages.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-material/angular-material.js"></script>
+  <script type="text/javascript" src="./node_modules/angular-datepicker/dist/index.js"></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+  <script type="text/javascript" src="node_modules/auth0-js/build/auth0.js"></script>
+  <script type="text/javascript" src="node_modules/angular-auth0/dist/angular-auth0.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/app.run.js"></script>
+  <script type="text/javascript" src="app/navbar/navbar.directive.js"></script>
+  <script src=".\node_modules\datatables\media\js\jquery.dataTables.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.min.js"></script>
+
+  <!-- App´s settings -->
+  <script type="text/javascript" src="app/settings/http-interceptor.service.js"></script>
+  <script type="text/javascript" src="app/settings/config.js"></script>
+
+  <!-- Services -->
+  <script type="text/javascript" src="app/auth/auth.service.js"></script>
+  <script src="./app/services/category.service.js"></script>
+  <script src="./app/services/type.service.js"></script>
+  <script src="./app/services/masterproject.service.js"></script>
+  <script src="./app/services/work-log.service.js"></script>
+  <script src="./app/services/auth.service.js"></script>
+  <script src="./app/services/logger.service.js"></script>
+  <script src="./app/services/stage.service.js"></script>
+  <script src="./app/services/project.service.js"></script>
+  <script src="./app/services/end-point.service.js"></script>
+
+  <!-- App's views -->
+  <script type="text/javascript" src="app/views/project/home.controller.js"></script>
+  <script type="text/javascript" src="app/callback/callback.controller.js"></script>
+  <script type="text/javascript" src="app/views/project/work-log/work-log.controller.js"></script>
+</body>
+
+</html>

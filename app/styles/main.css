@@ -1,0 +1,13 @@
+.titulo {
+    font-size: 21px;
+}
+
+.align {
+    text-align: left;
+}
+.navbar-default{
+    background-color:rgb(99,31,118)!important;
+}
+.navbar-brand{
+    color: #FFF!important;
+}

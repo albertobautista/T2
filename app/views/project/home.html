@@ -1,0 +1,187 @@
+<h4 ng-if="vm.auth.isAuthenticated()">
+    <br>
+    <div class="row">
+        <div class="col-md-3 col-sm-12 col-xs-12">
+            <center>
+                <div class="width100">
+                    <span class="titulo">Tipo: </span>
+                    <md-input-container>
+                        <md-select ng-model="vm.selectedtype" aria-label="Proyecto" placeholder="Tipo de proyecto" class="width100">
+                            <md-option ng-value="type" ng-repeat="type in vm.types" ng-selected="$first">
+                                {{ type.name }}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </center>
+        </div>
+        <div class="col-md-5 col-sm-12 col-xs-12">
+            <center>
+                <div class="width100">
+                    <span class="titulo">Proyecto: </span>
+                    <p ng-if="vm.projects.length === 0">No tienes proyectos</p>
+                    <md-input-container ng-if="vm.projects.length > 0">
+                        <md-select class="hiddeLetters" ng-model="vm.selectedProject" aria-label="Proyecto" placeholder="Selecciona un proyecto"
+                            ng-change="vm.getLogs(vm.selectedProject)">
+                            <md-option ng-value="project" ng-repeat="project in vm.projects" title="{{ project.projectName }} " ng-selected="$first">
+                                {{ project.projectName }}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </center>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <center>
+                <div class="width100">
+                    <span class="titulo">Etapa: </span>
+                    <p ng-if="vm.projects.length === 0">Este Proyecto no tiene Etapas</p>
+                    <md-input-container ng-if="vm.stages.length > 0">
+                        <md-select class="hiddeLetters" ng-model="vm.masterproject" aria-label="Proyecto" placeholder="Selecciona un proyecto">
+                            <md-option ng-value="stage" ng-repeat="stage in vm.stages" title="{{ stage.stageName }}" ng-selected="$first">
+                                {{ stage.stageName }}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </center>
+        </div>
+    </div>
+    <br>
+    <div class="row" ng-if="vm.selectedProject">
+        <div class="col-md-6 col-xs-12 col-sm-12">
+            <center>
+                <div class="width90">
+                    <form md-whiteframe="" novalidate name="logForm">
+                        <md-toolbar layout="row">
+                            <div class="md-toolbar-tools">
+                                <span>
+                                    <i class="material-icons">note_add</i> Registrar trabajo</span>
+                            </div>
+                        </md-toolbar>
+                        <div layout="column" layout-padding layout-margin class="align">
+                            <!-- Category -->
+                            <md-input-container flex>
+                                <label>
+                                    <translate>Categoría</translate>
+                                </label>
+                                <md-select ng-model="vm.logForm.category" required>
+                                    <!-- <md-option><em>None</em></md-option> -->
+                                    <md-option ng-repeat="category in vm.categories" ng-value="{{ category }}" placeholder="Selecciona una categoria">
+                                        {{ category.categoryName }}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <br>
+                            <div layout="row">
+                                <!-- Horas -->
+                                <div>
+                                    <md-input-container>
+                                        <label>Horas</label>
+                                        <md-select ng-model="vm.logForm.hours" aria-label="Horas" required>
+                                            <md-option ng-value="option" ng-repeat="option in vm.allowed.hours">
+                                                {{ option }}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                                <!-- Minutos -->
+                                <div>
+                                    <md-input-container>
+                                        <label>Minutos</label>
+                                        <md-select flex ng-model="vm.logForm.minutes" placeholder="Minutos" aria-label="Minutos" ng-if="!(vm.logForm.hours === 24)"
+                                            required style="width: 79px;">
+                                            <md-option ng-value="option" ng-repeat="option in vm.allowed.minutes">
+                                                {{ option }}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                                <!-- Fecha -->
+                                <md-input-container>
+                                    <md-datepicker ng-model="ctrl.myDate" md-placeholder="Fecha de registro" md-open-on-focus></md-datepicker>
+                                </md-input-container>
+                            </div>
+                            <div layout="row">
+                                <md-input-container flex>
+                                    <label> Comentario </label>
+                                    <textarea ng-model="vm.logForm.comment" name="comment" rows="2" minlength="5" md-maxlength="150" required></textarea>
+                                    <div ng-messages="logForm.comment.$error">
+                                        <div ng-message="minlength">
+                                            <translate>Escribe al menos 5 caracteres</translate>
+                                        </div>
+                                        <div ng-message="maxlength">
+                                            <translate>Escribe menos de 150 caracteres</translate>
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div layout="row" layout-align="end center">
+                            <md-button id="button-add" class="md-primary md-raised" ng-disabled="logForm.$invalid || !vm.logForm.category || (vm.logForm.minutes === 0 && vm.logForm.hours === 0)"
+                                type="button" aria-label="button-add" ng-click="vm.addLog(vm.logForm)">
+                                Añadir 
+                            </md-button>
+                        </div>
+                    </form>
+                    <br><br>
+                </div>
+            </center>
+        </div>
+        <div class="col-md-6 col-xs-12 col-sm-12">
+            <center>
+                <div class="width90">
+                    <md-content md-whiteframe="2">
+                        <md-toolbar layout="row">
+                            <div class="md-toolbar-tools">
+                                <span>
+                                    <i class="material-icons">alarm_on</i> Mis registros de trabajo </span>
+                            </div>
+                        </md-toolbar>
+                        <md-list ng-if="vm.logs.length > 0">
+                            <md-list-item class="md-2-line" ng-repeat="log in vm.logs | limitTo: 5">
+                                <div class="md-list-item-text">
+                                    <h3>Fecha: {{ log.fechatrabajo | date: 'dd/MM/yyyy' }}</h3>
+                                    <p>Tiempo: {{ log.horas }} hrs. {{ log.minutos }} min </p>
+                                    <p>Aprobado: {{ log.aprobado ? 'Sí' : 'No' }}</p>
+                                    <p ng-if="log.comentario.length > 0">
+                                        Comentario: {{ log.comentario }}
+                                    </p>
+                                    <hr>
+                                </div>
+                            </md-list-item>
+                            <md-list-item ng-if="vm.logs.length > 5">
+                                <span flex></span>
+                                <md-button id="buttonViewMore" class="md-primary md-raised" aria-label="Ver todos los registros" ng-click="vm.showAllLogs($event)">
+                                    Ver todos </md-button>
+                            </md-list-item>
+                        </md-list>
+                        <p ng-if="vm.logs.length === 0" layout-padding>
+                            No hay registros asignados a este proyecto
+                        </p>
+                    </md-content>
+                </div>
+            </center>
+
+        </div>
+    </div>
+    <br><br><br>
+</h4>
+<h4 ng-if="!vm.auth.isAuthenticated()" <div layout="row" layout-align="center center">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <form flex="50" novalidate name="loginForm" md-whiteframe="2" layout-padding>
+        <section layout="row" layout-align="center">
+            <div flex="25">
+                <img src="../assets/logo.png " alt="Tesselar logo" style="width:100%;" />
+            </div>
+        </section>
+        <div layout="row" layout-align="center">
+            <md-button flex id="button-login" type="submit" class="md-primary md-raised" ng-disabled="loginForm.$invalid" aria-label="button-login"
+                ng-click="vm.auth.login()">
+                Iniciar sesión 
+            </md-button>
+        </div>
+    </form>
+    </div>
+    <br><br>
+</h4>

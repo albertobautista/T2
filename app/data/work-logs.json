@@ -1,0 +1,153 @@
+[{
+        "project": "Proyecto17",
+        "stageName": "Diseño",
+        "category": "Categoria 1",
+        "workDate": "2017-11-12",
+        "hours": "3",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    },
+    {
+        "project": "Proyecto",
+        "stageName": "Desarrollo",
+        "category": "Categoria 1",
+        "workDate": "2017-10-11",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto232",
+        "stageName": "Desarrollo",
+        "category": "Categoria 2",
+        "workDate": "2017-02-11",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto323",
+        "stageName": "Diseño",
+        "category": "Categoria 4",
+        "workDate": "2017-09-15",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyectorere",
+        "stageName": "Desarrollo",
+        "category": "Categoria 9",
+        "workDate": "2017-10-17",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyectoerere",
+        "stageName": "Diseño",
+        "category": "Categoria 2",
+        "workDate": "2017-08-08",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyectorwerwe",
+        "stageName": "Desarrollo",
+        "category": "Categoria 7",
+        "workDate": "2017-07-21",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto54235",
+        "stageName": "Pruebas",
+        "category": "Categoria 18",
+        "workDate": "2017-08-21",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto17534",
+        "stageName": "Pruebas",
+        "category": "Categoria 6",
+        "workDate": "2017-03-11",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto543534",
+        "stageName": "Fase 1",
+        "category": "FC-00032",
+        "workDate": "2017-04-16",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto534534",
+        "stageName": "Diseño",
+        "category": "Categoria 7",
+        "workDate": "2017-11-11",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto1423427",
+        "stageName": "Pruebas",
+        "category": "Categoria 5",
+        "workDate": "2017-11-11",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto42342317",
+        "stageName": "Diseño",
+        "category": "Categoria 11",
+        "workDate": "2017-11-11",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto17",
+        "stageName": "Diseño",
+        "category": "Categoria 9",
+        "workDate": "2017-11-11",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }, {
+        "project": "Proyecto15345347",
+        "stageName": "Diseño",
+        "category": "Categoria 5",
+        "workDate": "2017-11-11",
+        "hours": "1",
+        "minutes": "30",
+        "comment": "Se desarrollaron funcionalidades nuevas",
+        "approved": "true"
+
+    }
+]
